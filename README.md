@@ -8,7 +8,7 @@ The main component in this microservice is SpringBootJDBCController. SpringBootJ
 Redshift using Copy command configured in application.properties file. EmailService is used to send the email notification using AWS in case of any exception.
 
 All the configurable properties in this microservices like username, password, bucketname, accesskey, secretkey, copy command and redShiftUrl are maintained in application.properties
-file, so it is easy to configure them even in runtime and supports loose coupling.
+file under resources folder, so it is easy to configure them even in runtime and supports loose coupling.
 
 
 Amazon aws sdk for java is required to connect to S3 using java code and Redshift jar is required to connect to Redshift using jdbc connection.
