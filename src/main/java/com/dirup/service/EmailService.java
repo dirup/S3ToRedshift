@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import javax.print.attribute.standard.Destination;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.web.ResourceProperties.Content;
 
 import com.amazonaws.regions.Regions;
@@ -17,11 +18,13 @@ import com.amazonaws.services.simpleemail.model.SendEmailRequest;
 	public class EmailService {
 
 	  // Replace xxxx@example.com with your "From" address.
-	  static final String FROM = "xxxx@example.com";
+	  @Value("${app.toEmail}")
+		private String TO;
 
 	  // Replace xxxx@example.com with a "To" address. If your account
 	  // is still in the sandbox, this address must be verified.
-	  static final String TO = "xxxx@example.com";
+	  @Value("${app.fromEmail}")
+		private String FROM;
 
 	  // The configuration set to use for this email. If you do not want to use a
 	  // configuration set, comment the following variable and the 
